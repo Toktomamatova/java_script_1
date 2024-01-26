@@ -4,7 +4,7 @@ var secondArray = [1, 45, 32, 3, 4, 2, 56, 76, 67, 87, 89, 8, 56, 54];
 
 var sorted = firstArray
     .filter(num => secondArray.includes(num))
-    .sort((n1, n2) => n1 - n2);
+    .sort((n1, n2) => n2 - n1);
 
 console.log(sorted);
 
