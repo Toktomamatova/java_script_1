@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="todo-item">
+    <input type="text" id="todo-text" placeholder="Enter text">
+    <button class="edit-button" onclick="openEditModal()">Edit</button>
+</div>
+
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span onclick="closeEditModal()" style="cursor: pointer; float: right;">&times;</span>
+        <h2>Edit Text</h2>
+        <input type="text" id="editInput" placeholder="Enter new text">
+        <br>
+        <button onclick="saveEdit()">OK</button>
+        <button onclick="closeEditModal()">Cancel</button>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
