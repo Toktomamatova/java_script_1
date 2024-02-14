@@ -1,12 +1,24 @@
 //1)
-var firstArray = [1, 2, 3, 45, 32, 56, 61, 23, 12, 2, 34, 5, 6, 3, 76, 67, 87, 76];
-var secondArray = [1, 45, 32, 3, 4, 2, 56, 76, 67, 87, 89, 8, 56, 54];
+var tags = ['li', 'div', 'li', 'p', 'h1', 'p', 'h1', 'div', 'div', 'li', 'h1', 'p', 'h1', 'ol', 'br'];
 
-var sorted = firstArray
-    .filter(num => secondArray.includes(num))
-    .sort((n1, n2) => n2 - n1);
+var tagObject = {};
+for (var i = 0; i < tags.length; i++) {
+    if (tagObject[tags[i]]) {
+        tagObject[tags[i]]++;
+    } else {
+        tagObject[tags[i]] = 1;
+    }
+}
 
-console.log(sorted);
+var sortedTags = Object.entries(tagObject)
+    .sort((a, b) => b[1] - a[1])
+    .reduce((obj, [key, value]) => {
+        obj[key] = value;
+        return obj;
+    }, {});
+
+console.log(sortedTags);
+
 
 //2)
 function ShortName(surname, name, middleName) {
